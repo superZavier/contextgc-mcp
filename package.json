@@ -1,0 +1,37 @@
+{
+  "name": "contextgc-mcp",
+  "version": "0.1.0",
+  "description": "AST-powered context compression MCP server for AI coding assistants — save 70-90% tokens",
+  "main": "dist/index.js",
+  "bin": {
+    "contextgc-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/vitest run",
+    "test:watch": "node --experimental-vm-modules node_modules/.bin/vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["mcp", "context", "token-optimization", "ast", "babel", "claude-code", "kilo-code"],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/generator": "^7.27.1",
+    "@babel/parser": "^7.27.1",
+    "@babel/traverse": "^7.27.1",
+    "@babel/types": "^7.27.1",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.6.11",
+    "@types/babel__traverse": "^7.6.8",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
